@@ -27,7 +27,15 @@ console.log("✅ Gemini API Loaded");
 // Middleware
 // ============================
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://your-vercel-app.vercel.app",
+    ],
+    methods: ["GET", "POST"],
+  })
+);
 app.use(express.json());
 
 // ============================
